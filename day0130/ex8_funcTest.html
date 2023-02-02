@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("안녕하세요 떙땡님 자바스크립트 수업에 온걸 환영합니다.<br>");
+        document.write("안녕하세요 떙땡님 자바스크립트 수업에 온걸 환영합니다.<br>");
+        document.write("안녕하세요 떙땡님 자바스크립트 수업에 온걸 환영합니다.<br>");
+
+        //중복되는 부분을 함수로 포장후 중복되지 않는 부분은 파라미터로 만든 후 함수를 호출할때 값을 넘긴다.
+
+        function showName(name){
+            document.write("안녕하세요 " + name + "님~ 자바스크립트 수업에 온걸 환영해요<br>");
+        }
+        showName("재은");
+        showName("한경");
+        showName("길동");
+
+        //
+        function showInfo(name, age){
+            document.write("이름은 : " + name + "나이는 : " + age + "세 입니다. <br>");
+        }
+        showInfo("재은", 27);
+        showInfo("인아", 28);
+
+        //나이, 키, 이름을 파라미터로 받아 출력
+        //리터럴
+        var myInfo=function(age,height,name){
+            document.write("나이: " + age + "세<br>");
+            document.write("신장: " + height + "cm<br>");
+            document.write("이름: " + name + "<br>");
+        }
+        myInfo(23,175,"현빈");
+        document.write("======================================================");
+    </script>
+</body>
+</html>

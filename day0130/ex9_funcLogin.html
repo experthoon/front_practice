@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var rightId = "angel";
+        var rightPw = "1234";
+
+        //normal함수 만들어 아이디, 비밀번호가 맞는지 확인
+        function login(id, pw){
+            if(id==rightId)
+            {
+                if(pw==rightPw)
+                {
+                    document.write(id + "님 로그인에 성공하셨습니다.");
+                }else{
+                    alert("잘못된 비밀번호입니다.");
+                }
+            }else{
+                alert("존재하지 않는 아이디입니다.");
+            }
+        }
+
+        //prompt에 입력할 변수 작성
+        var userId = prompt("아이디를 입력하세요", "");
+        var userPw = prompt("패스워드를 입력하시오", "");
+
+        login(userId,userPw);
+    </script>
+</body>
+</html>

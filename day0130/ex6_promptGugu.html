@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--prompt에 구구단 몇단인지를 입력받아서 출력-->
+    <script>
+    var gugu = prompt("원하는 구구단을 입력해주세요");
+    if(!isNaN(gugu)){ //isNaN() : 매개변수가 숫자가 아니면 true 숫자이면 false를 반환.
+    for(var i = 1; i<10; i++){
+      document.write(gugu+"x"+i+"="+(i*gugu)+"입니다.</br>");
+    }
+     }else{
+        alert("숫자가 아닙니다.")
+     }
+    </script>
+</body>
+</html>
