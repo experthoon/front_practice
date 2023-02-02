@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--img로 width=200 height=180으로 아무사진이나 body에 넣은후
+        이미지를 클릭하면 아래 div태그안에 각종정보(src,width,height)
+        를 얻어서 출력하시오(getAttribute,innerHTML 사용)-->
+        <body>
+            <img src="../logoImg/설인아.png" width="200" height="180" id="myimg">
+            <hr>
+            <button type="button" onclick="test()">이미지 사이즈 알아보기</button>
+            
+           
+                
+            
+            <script>
+                function test(){
+                var photo = document.getElementById("myimg");
+                var r = document.getElementById("result");
+                //태그의 속성값 가져오기
+                var w=photo.getAttribute("width"); //변경 : setAttribute
+                var h=photo.getAttribute("height");
+                var src=photo.getAttribute("src");
+        
+                alert(w + "\n" + h + "\n" + src);
+                r.innerHTML = "넓이: " + w + "<br>" + "높이: " + h + "<br>" + "src: " + src;
+                }
+                
+            </script>
+            <div id="result"></div>
+</body>
+</html>

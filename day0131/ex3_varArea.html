@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //전역변수 : 전역에서 사용하는 변수 
+
+        var a = 10;
+        var b = 100;
+
+        document.write("1. a=" +a+"<br>");
+        document.write("2. b=" +b+"<br>");
+
+        function outer(){ //전역변수는 전역변수 내에서만 적용 가능
+            var a =20;
+            document.write("3. outer a =" + a + "<br>");
+            document.write("4. outer a =" + a + "<br>");
+        }
+
+        document.write("1. a=" +a+ "<br>");
+        document.write("2. b=" +b+ "<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+    <style>
+        .buttons{
+            margin-bottom: 30px;
+        }
+    </style>
+    <script>
+        function aa(){
+            var p = document.getElementById("photo");
+
+            var w = p.getAttribute("width");
+            w-=10;
+            p.setAttribute("width",w);
+        }
+        function bb(){
+            var p = document.getElementById("photo");
+
+            var w = p.getAttribute("width");
+            w = parseInt(w);
+            w+=10;
+            p.setAttribute("width",w);
+        }
+        //document.getElementById("btnSmall").onclick=function(){
+          //  var w = photo.getAttribute("width");
+           // w-=10l
+           // photo.setAttribute("width",w);}
+        
+    </script>
+    <script>
+        window.onload=function(){
+           var selImage = document.getElementById("selImage");
+           var photo=document.getElementById("photo");
+
+            //초기이미지
+          //select태그에서 선택된 option의 value값 얻기
+
+          var init_image = selImage.value;
+          //alert(init_image);
+          //현재의 사진속성을 변경해준다
+          photo.setAttribute("src", init_image);
+
+
+          //select이벤트 _change
+          selImage.onchange = function(){
+            //모든 이벤트함수에는 이벤트 발생한 객체에 대한 this라는 변수가 기본적으로 존재
+            console.log(this.value);
+
+            //사진(photo)의 src에 this.value적용
+            photo.setAttribute("src",this.value);
+          }
+        }
+    </script>
+</head>
+<body>
+    <div class="buttons">
+        <button type="button" class="btn btn-pink" id="btnsmall" onclick="aa()">점점작게</button>
+        <button type="button" class="btn btn-black" id="btnlarge" onclick="bb()">점점크게</button><br>
+        <b>사진선택</b>
+        <select id="selImage">
+            <option value="../연예인사진/10.jpg" >김태희</option>
+            <option value="../연예인사진/17.jpg" >신민아</option>
+            <option value="../연예인사진/12.jpg" >박보영</option>
+            <option value="../연예인사진/19.jpg" >수지</option>
+        </select>
+    </div>
+    <div>
+        <img src="../logoImg/a01.png" id="photo" width="350">
+    </div>
+</body>
+</html>

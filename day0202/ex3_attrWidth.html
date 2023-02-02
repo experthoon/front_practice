@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function photoSmall(){
+            var p = document.getElementById("myimg");
+
+            var w  = p.getAttribute("width");
+            console.log(typeof(w));
+            w-=10; // - 랑 * 는 숫자로 계산 반면에 +는 안돤다. 형변환해야함
+            p.setAttribute("width",w);
+        }
+
+        function photoLarge(){
+            var p = document.getElementById("myimg");
+
+            var w  = p.getAttribute("width");
+            w = parseInt(w);
+            console.log(typeof(w));
+            w += 10; // - 랑 * 는 숫자로 계산 반면에 +는 안돤다. 형변환해야함
+            p.setAttribute("width",w);
+        }
+    </script>
+</head>
+<body>
+    <h2>이미지 사이즈 이벤트</h2>
+    <div id="one">
+        <button type="button" onclick="photoSmall()">점점작게</button>
+        <button type="button" onclick="photoLarge()">점점크게</button>
+    </div>
+
+    <img src="../만화이미지/01.png" width="200" id="myimg">
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var input = prompt("숫자를 입력하시오");
+
+        function checkIsNaN(input){
+
+            
+            result = Number(input);
+
+            if(isNaN(result)==true)
+            {
+                document.write("숫자가 아닙니다");
+            }else{
+                document.write("숫자가 맞습니다.");
+            }
+        }
+
+        checkIsNaN(input);
+    </script>
+</body>
+</html>

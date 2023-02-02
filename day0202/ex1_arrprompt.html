@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        div img{
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+    <script>
+    
+    window.onload=function(){
+        var imgarr = new Array(5);
+                imgarr[0] = "../만화이미지/01.png";
+                imgarr[1] = "../만화이미지/02.png";
+                imgarr[2] = "../만화이미지/03.png";
+                imgarr[3] = "../만화이미지/04.png";
+                imgarr[4] = "../만화이미지/05.png";  
+
+                //imgarr.push("../만화이미지/01.png");
+                var r = document.getElementById("result");
+                var btn1 = document.getElementById("btn1");
+
+                btn1.onclick=function(){
+                    var ix = prompt("출력할 이미지의 인덱스번호를 입력해주세요",0);
+
+                    if(ix<0 || ix>4){
+                        r.innerHTML = "해당번호의 이미지는 없습니다";
+                    }else{
+                        r.innerHTML = "<img src = '" + imgarr[ix]+"'>";
+                    }
+                }
+    }
+               
+    </script>
+
+</head>
+<body>
+    <!--
+        이미지출력 이라는 버튼 생성후 버튼클릭시 prompt로 출력할 이미지의 인덱스 번호룰
+        입력해주세요 라고 출력후 0번을 입력하면 0번이미지 출력
+        총 5개의 이미지를 imgarr에 배열형태로 넣어 놓는다 
+        요구조건: 배열인덱스에 없는 값을 입력하면 div에 해당 번호의 이미지는 없습니다.
+
+    -->
+
+        <button type="button" class="btn btn black" id="btn1">출력</button>
+        <hr>
+        <div id="result"></div>
+</body>
+</html>

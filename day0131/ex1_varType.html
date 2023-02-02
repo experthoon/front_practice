@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a="Hello";
+        var b=100;
+        var c=3.14;
+        var d="30";
+
+        //typeof 데이터 타입
+        document.write(typeof(a)+"<br>");
+        document.write(typeof(b)+"<br>");
+        document.write(typeof(c)+"<br>");
+        document.write(typeof(d)+"<br>");
+
+        document.write(b+100+"<br>");
+        document.write(d+100+"<br>");
+
+        var sum=parseInt(d)+100; //숫자로 변환후 계산
+        document.write(sum+"<br>");
+
+        var s = "5*6-10";
+        document.write(s + "<br>");
+
+        document.write(eval(s) + "<br>"); //수식형태의 문자열을 실제 계산
+        
+        //isNaN(Not a number) - 문자일 경우 true, 숫자일 경우 false
+        document.write(isNaN(100) + "<br>");
+        document.write(isNaN("hello")+"<br>");
+        document.write(isNaN("a100") + "<br>");
+        document.write(isNaN("100") + "<br>"); //isNaN 함수에서는 "100"도 숫자로 인식
+        
+
+        //현재날짜출력
+        var date = new Date();
+
+        document.write(date.getFullYear() + "<br>");//2023
+        document.write(date.getYear() + "<br>"); //123
+        document.write((date.getMonth()+1) + "<br>");
+        document.write(date.getDate() + "<br>"); //31
+        document.write(date.getDay() + "<br>"); //2 == 화요일
+
+        document.write("오늘은 " + date.getFullYear() + "년" + (date.getMonth()+1) +"월" + date.getDate() + "일 입니다<br>");
+        
+    </script>
+
+</head>
+<body>
+   
+</body>
+</html>

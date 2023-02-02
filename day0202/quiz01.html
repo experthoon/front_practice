@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--quiz01.html 만화이미지 01.png~10.png까지 출력하시오(2줄로 출력할것!!)-->
+    <h2>만화이미지 01.png~10.png까지 출력하시오(2줄로 출력할것!!)</h2>
+    <script>
+        for(var i =1; i<=10; i++){
+        var imgname = "../만화이미지/"+(i<10?"0":"") +i+ ".png";
+        var s = "<img src = '" + imgname + "' width='100'>";
+        document.write(s);
+
+        if(i%5==0)
+        document.write("<br><br>");
+    }
+</script>
+
+</body>
+</html>

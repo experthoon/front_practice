@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        div img{
+            max-width: 150px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var init_image= " ";
+            photo.setAttribute("src",init_image);
+
+            var r = document.getElementById("result");
+            var ani =document.getElementById("person1");
+            var person =document.getElementById("person2");
+            var food= document.getElementById("person3");
+            var small = document.getElementById("btnsmall");
+            var large = document.getElementById("btnlarge");
+
+            person1.onclick=function aa(){
+                    r.innerHTML = "<img src= '../연예인사진/17.jpg'>"; 
+            }
+            person2.onclick=function bb(){
+                    r.innerHTML = "<img src= '../연예인사진/19.jpg'>";
+            }
+            person3.onclick=function cc(){
+                    r.innerHTML = "<img src= '../연예인사진/12.jpg'>";
+            }  
+       
+
+        btnsmall.onclick=function dd(){
+            var p = document.getElementById("photo");
+
+            var w = p.getAttribute("width");
+            w-=10;
+            photo.setAttribute("width",w);
+        }
+        btnlarge.onclick=function ee(){
+            var p = document.getElementById("photo");
+
+            var w = p.getAttribute("width");
+            w = parseInt(w);
+            w+=10;
+            photo.setAttribute("width",w);
+        }
+
+    }
+
+    </script>
+    
+</head>
+<body>
+    <div id="buttons">
+        <button type="button" class="btn btn-pink" id="person1" onclick="aa()">신민아</button>
+        <button type="button" class="btn btn-black" id="person2" onclick="bb()">수지</button>
+        <button type="button" class="btn btn-green" id="person3" onclick="cc()">박보영</button>
+
+        <button type="button" class="btn btn-pink" id="btnsmall">점점작게</button>
+        <button type="button" class="btn btn-black" id="btnlarge">점점크게</button>
+    </div>
+    <hr>
+    <div id="result">
+        <img src="" id="photo" width="300">
+    </div>
+</body>
+</html>

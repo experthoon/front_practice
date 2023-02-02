@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h3>문제1. 배열변수에 초기값으로 색상 7개를 넣고 배열값을 해당색상으로 출력
+        출력은 b태그로 가로롤 2칸떼고 하세요
+    </h3>
+    <script>
+        var arr=['red','blue','green','orange','pink','gray','tomato'];
+
+        for(var i=0; i<arr.length; i++){
+            document.write("<b style = 'color: " + arr[i] + ";'>" + arr[i] + "&nbsp&nbsp</b>");
+        }
+    
+    </script>
+   
+
+
+    <h3>Array(3)으로 생성후 각배열의 이미지를 넣고 반복해서 출력 이미지는 가로세로 100px
+        동그라미
+        <script>
+            var arr1 = new Array(3);
+            arr1[0] = "../만화이미지/01.png";
+            arr1[1] = "../만화이미지/02.png";
+            arr1[2] = "../만화이미지/03.png";
+
+            for(var i =0; i<arr1.length; i++){
+                document.write("<img src = '" + arr1[i] + "'>");
+            }
+        </script>
+    </h3>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test{
+            width: 100px;
+            height: 120px;
+        }
+        .result{
+            width: 400px;
+            height: 380px;
+        }
+
+        #result_div>img{
+            position: absolute;
+            left: 200px;
+            top: 300px;
+            border: 1px solid gray ;
+            border-radius: 10px 10px 10px;
+        }
+        #img_div{
+            position: absolute;
+            left: 500px;
+            top: 100px;
+            width: 600px;
+            height: 350px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            //id로 객체 읽어옴
+            img1 = document.getElementById("img1");
+            img2 = document.getElementById("img2");
+            img3 = document.getElementById("img3");
+            img4 = document.getElementById("img4");
+            img5 = document.getElementById("img5");
+
+            //각 객체마다 온클릭기능 부여하기
+            img1.onclick=function(){
+                img5.setAttribute("src", img1.getAttribute("src"));
+            }
+            img2.onclick=function(){
+                img5.setAttribute("src",img2.getAttribute("src"));
+            }
+            img3.onclick=function(){
+                img5.setAttribute("src", img3.getAttribute("src"));
+            }
+            img4.onclick=function(){
+                img5.setAttribute("src", img4.getAttribute("src"));
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <!--음식사진(1)을 img태그로 나타낸후 id를 img1으로 주고 그아이디로 이벤트 추가하기
+    사진에 마우스를 올리면 음식사진(2)로 바뀌고, 클릭하면 음식사진(3)으로 바뀌고
+    마우스를 벗어나면 다시 원래 이미지(1)로 변경되도록 이벤트주기-->
+    <div id="img_div">
+        <img src = "../flower_ani/된장찌개.PNG" class="test" id="img1">
+        <img src = "../flower_ani/떡볶이.PNG" class="test" id="img2">
+        <img src = "../flower_ani/라면.PNG" class="test" id="img3">
+        <img src = "../flower_ani/비빔밥.PNG" class="test" id="img4">
+    </div>
+
+    <div id="result_div">
+        <img src = "../flower_ani/된장찌개.PNG" class="result" id="img5">
+    </div>
+</body>
+</html>

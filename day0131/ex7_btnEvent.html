@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheey" href="../css/style.css">
+    <style>
+        #out{
+            position: absolute;
+            left: 20px;
+            top: 100px;
+            background: yellow;
+            padding: 10px 10px 10px 10px;
+            width: 300px;
+            height: 100px;
+            border: 1px solid green;
+        }
+    </style>
+
+    <script>
+        function test1(a)
+        {
+            alert(a+100);
+        }
+        function test2(str)
+        {
+            alert("문자열 ["+str+"]을 받았어요");
+        }
+        function test3()
+        {
+            var a = confirm('데이터를 추가할까요? ');
+            if(a==1)
+                out.innerHTML="추가했어요";
+            else
+                out.innerHTML="취소했어요";
+        }
+
+        window.onload = function(){
+            document.getElementById("btn4").onclick=function(){
+                var name = prompt("당신은 누구입니까?");
+                out.innerHTML= "저는 " + name.fontcolor('magenta') + "입니다.";
+            
+            }
+           
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="alert" class="btn btn-pink" onclick="test1(123)">
+    <input type="button" value="alert" class="btn btn-black" onclick="test2('hello')">
+    <input type="button" value="confirm" class="btn btn-green" onclick="test3()">
+    <input type="button" value="prompt" class="btn btn-pink" id="btn4">
+
+    <div id = "out"></div>
+    
+</body>
+</html>

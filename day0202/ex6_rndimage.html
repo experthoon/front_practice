@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #photo{
+            position: absolute;
+            left: 500px;
+            top: 150px;
+            width: 400px;
+            height: 500px;
+            border: 20px groove silver;
+        }
+    </style>
+
+    <script>
+        window.onload=function(){
+            //배열에 여러가지 이미지 넣기
+            var imgarr = new Array();
+
+            imgarr.push("../연예인사진/12.jpg");
+            imgarr.push("../연예인사진/1.jpg");
+            imgarr.push("../연예인사진/2.jpg");
+            imgarr.push("../연예인사진/3.jpg");
+            imgarr.push("../연예인사진/4.jpg");
+            imgarr.push("../연예인사진/5.jpg");
+            imgarr.push("../연예인사진/6.jpg");
+            imgarr.push("../연예인사진/7.jpg");
+            imgarr.push("../연예인사진/8.jpg");
+            imgarr.push("../연예인사진/9.jpg");
+            //이미지의 요소값을 얻어서 랜덤하게 초기이미지 넣기
+            var photo = document.getElementById("photo");
+
+            //0~9 사이의 난수값얻기
+            var idx = parseInt(Math.random()*10);
+            photo.setAttribute("src", imgarr[idx]);
+
+            //이미지버튼 이벤트
+            document.getElementById("btnRandom").onclick=function(){
+                var idx = parseInt(Math.random()*10);
+                photo.setAttribute("src", imgarr[idx]);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <input type="image" src = "../flower_ani/f11.png" id="btnRandom" width="100">
+    <marquee width = "500" direction = "left">
+        <img src = "../flower_ani/f1.png" width="50">
+        <b>왼쪽버튼을 누르면 이미지가 바뀝니다.</b>
+    </marquee>
+    
+    <img src="../만화이미지/01.png" id="photo">
+</body>
+</html>

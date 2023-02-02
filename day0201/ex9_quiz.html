@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        div img{
+            max-width: 150px;
+        }
+    </style>
+    <script>
+        function hello(){
+
+            var ans = confirm("만화이미지를 추가하시겠습니까?");
+
+            if(ans==1)
+            r.innerHTML+="<img src= '../만화이미지/01.png'>";
+            else
+            document.write("추가하지 않습니다.<br>");
+        }
+
+        function hello1(){
+
+        var ans = confirm("연예인 추가하시겠습니까?");
+
+        if(ans==1)
+        r.innerHTML+="<img src= '../연예인사진/1.jpg'>";
+        else
+        document.write("추가하지 않습니다.<br>");
+        }
+
+        function hello2(){
+
+        var ans = confirm("음식사진을 추가하시겠습니까?");
+
+        if(ans==1)
+        r.innerHTML+="<img src= '../flower_ani/된장찌개.PNG'>";
+        else
+        document.write("추가하지 않습니다.<br>");
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" value="만화이미지" id="btn1" class="btn btn-pink" onclick="hello()">
+    <input type="button" value="연예인" id="btn2" class="btn btn-black" onclick="hello1()">
+    <input type="button" value="음식사진" id="btn3" class="btn btn-green" onclick="hello2()">
+    <hr>
+    <div id="result"></div>
+    <script>
+        var r = document.getElementById("result");
+    </script>
+</body>
+</html>
