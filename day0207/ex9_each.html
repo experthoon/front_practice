@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        .bg_0{background-color: red; color: blue;}
+        .bg_1{background-color: blue; color: red;}
+        .bg_2{background-color: cyan; color: blue;}
+        .bg_3{background-color: red; color: cyan;}
+        .bg_4{background-color: red; color: orange;}
+
+        ul li{width: 150px;}
+    </style>
+</head>
+<body>
+    <!--태그를 반복할 때 사용하는 each문-->
+    <b></b><b></b><b></b><b></b><b></b><b></b>
+    <script>
+        //b태그 갯수만큼 자동반복
+        //i는 index: 0부터
+        //element는 인덱스에 해당하는 b태그: 생략가능
+        $("b").each(function(i, element){
+           // $(this).text(i);
+
+            $(element).text(i);
+        });
+    </script>
+    <hr>
+    <ul>
+        <li>apple</li>
+        <li>banana</li>
+        <li>kiwi</li>
+        <li>watermelon</li>
+        <li>jamong</li>
+    </ul>
+
+    <script>
+       // $("ul li").each(function(idx){
+        //    $(this).addClass("bg_" + idx);
+        //});
+        $("ul li").each(function(i, element){
+            $(element).addClass("bg_"+i);
+        });
+
+        //li에 마우스를 올리면 ****를 출력해보자
+        //append after 추가시 비교
+        $("ul li").mouseover(function(){
+            $(this).append("<b>***</b>");
+            //$(this).after("<b>***</b>");
+        });
+        $("ul li").mouseout(function(){
+            //find : 하위태그 중에서 b태그를 찾는 것.
+            $(this).find("b").remove();
+
+            //$(this).next().remove(); //현재 이벤트가 발생하는 li태그의 다음 태그를 제거
+        })
+
+    </script>
+</body>
+</html>
