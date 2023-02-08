@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="../js/rgb.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            width: 80px;
+            height: 80px;
+            float:left;
+            border-radius: 100px;
+            font-size: 2em;
+            text-align: center;
+            line-height: 80px;
+            border: 1px solid gray;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div><div></div><div></div><div></div><div></div><div></div>
+    <h2></h2>
+
+    <script>
+        $("div").each(function(i,element){
+            $(this).css("background-color",randomColor()).html(i+1);
+        });
+
+        //각 div클릭하면 해당색상 배경색을 얻어서 h2태그에 넣어준다
+        $("div").click(function(){
+            var bg = $(this).css("background-color");
+            $("h2").text(bg);
+        });
+
+        //hover = mouseover_mouseout
+        $("div").hover(function(){
+            var co = $(this).css("background-color");
+            $("h2").css("color",co).html(co);
+        },function(){
+            $("h2").empty(); //다시 지우기
+        });
+    </script>
+</body>
+</html>

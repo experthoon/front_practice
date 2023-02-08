@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        a{
+            background-color: aquamarine;
+            cursor: pointer;
+            border: 1px solid gray;
+            box-shadow: 5px 5px 5px gray;
+            margin-left: 10px;
+            font-size: 15pt;
+        }
+
+        div{
+            width: 300px;
+            height: 300px;
+            border: 1px solid gray;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+        div.a{
+            font-size: '2em';
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: azure;
+        }
+        div.b{
+            border: 10px groove gold;
+            border-radius: 30px;
+            box-shadow: 7px 7px 7px orange;
+        }
+        div.c{
+            background-image: url('../연예인사진/16.jpg');
+            background-repeat: no-repeat;
+            background-size: 150px 150px;
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+    <a>클래스 a만 추가</a>
+    <a>클래스 b만 추가</a>
+    <a>클래스 a,b만 추가</a>
+    <a>클래스 c만 추가</a>
+    <div>제이커리</div>
+
+    <script>
+        //첫 번째 a태그에 addclass a, removeclass b c
+        $("a:eq(0)").click(function(){
+            $("div").removeClass("b c").addClass("a");
+        });
+
+        $("a:eq(1)").click(function(){
+            $("div").removeClass("b c").addClass("b");
+        });
+
+        $("a:eq(2)").click(function(){
+            $("div").removeClass("c").addClass("a, b");
+        });
+        $("a:eq(3)").click(function(){
+            $("div").removeClass("a b").addClass("c");
+        });
+
+        $("a:eq(4)").click(function(){
+            $("div").addClass("a b c");
+        });
+    </script>
+</body>
+</html>

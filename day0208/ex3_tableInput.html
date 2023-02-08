@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <table class="table table-bordered" style="width: 400px;">
+        <tr>
+            <th width = "100">이름</th>
+            <td>
+                <input type="text" id="name" style="width: 100px;">
+            </td>
+        </tr>
+        <tr>
+            <th width = "100">java</th>
+            <td>
+                <input type="text" id="java" style="width: 100px;">
+            </td>
+        </tr>
+        <tr>
+            <th width = "100">html</th>
+            <td>
+                <input type="text" id="html" style="width: 100px;">
+            </td>
+        </tr>
+        <tr>
+            <th width = "100">jquery</th>
+            <td>
+                <input type="text" id="jquery" style="width: 100px;">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <button type="button" class="btn btn-info" id="btnResult">결과출력</button>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <div id="result" style="color : rgb(11, 22, 55)"></div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        //버튼이벤트
+        $("#btnResult").click(function(){
+            var name = $("#name").val();
+            var java = $("#java").val();
+            var html = $("#html").val();
+            var jquery = $("#jquery").val();
+
+            if(name.length==0){
+                alert("이름을 입력해주세요");
+                $("#name").focus();
+                return;
+            }
+
+            if(isNaN(java) || java.length==0){
+                alert("자바점수는 숫자로만 입력해주세요");
+                $("#java").focus();
+                return;
+            }
+            if(isNaN(html) || html.length==0){
+                alert("html은 숫자로만 입력해주세요");
+                $("#html").focus();
+                return;
+            }
+            if(isNaN(jquery) || jquery.length==0){
+                alert("제이쿼리 점수는 숫자로만 입력해주세요");
+                $("#jquery").focus();
+                return;
+            }
+
+            //총점
+            var sum=parseInt(java)+parseInt(html)+parseInt(jquery);
+
+            //평균
+            var avg=sum/3.0;
+
+            //출력
+            var s = "이름: " +name+ "<br>";
+            s+="Java점수: " +java+ "점<br>";
+            s+="Html점수: " +html+ "점<br>";
+            s+="Jquery점수: " +jquery+ "점<br>";
+            s+="총점: " +sum+ "점<br>";
+            s+="평균: " +avg+ "점<br>";
+
+            $("#result").html(s).css({
+                "font-size" : "15pt",
+            });
+        });
+    </script>
+</body>
+</html>

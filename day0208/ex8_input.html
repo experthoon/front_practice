@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid gray;
+            padding: 20px;
+            width: 500px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>폼태그 연습</h3>
+    <div>
+        <b>아이디</b>
+        <input type="text" style="width : 100px">
+        <br>
+        <b>비밀번호</b>
+        <input type="password" style="width: 120px;">
+    </div>
+
+    <script>
+        //포커스 이동시 배경색
+        $("input:text,input:password").focus(function(){
+            $(this).css("background-color","yellow");
+        });
+        
+        //포커스 벗어날시 화이트
+        $("input:text,input:password").blur(function(){
+            $(this).css("background-color","white");
+        });
+    </script>
+
+    <h3>폼태그 연습 #2</h3>
+    <div>
+        <input type="checkbox" id="cbk" value="lic">운전면허
+        &nbsp;&nbsp;
+        <button type="button" id="btn1">확인</button>
+        &nbsp;&nbsp;<span></span>
+    </div>
+
+    <script>
+        $("#btn1").click(function(){
+            var a = $("#cbk").val(); //무조건 on(value 미지정시)
+            var b = $("#cbk").is(":checked"); //체크상태에 따라 t,f
+            $("span:eq(0)").html(a+","+b);
+        });
+    </script>
+
+    <h3>폼태그 연습 #3</h3>
+    <div>
+        <h3>당신의 거주지는?</h3>
+        <input type="radio" name="city" value="서울시">서울
+        <input type="radio" name="city" value="경기">경기
+        <input type="radio" name="city" value="제주">제주
+        <input type="radio" name="city" value="부산">부산
+        <br>
+        <button type="button" id="btn2">선택출력</button>
+        <span></span>
+    </div>
+
+    <script>
+        $("#btn2").click(function(){
+            var data = $("input[name='city']:checked").val(); //체크된값 가져오기
+            $("span:eq(1)").html(data);
+        });
+    </script>
+
+    <h3>폼태그 연습#4</h3>
+    <div>
+        <h3>구현가능한 컴퓨터 언어는?</h3>
+        <input type="checkbox" name="clang" value="Java">Java
+        <input type="checkbox" name="clang" value="Jquery">Jquery
+        <input type="checkbox" name="clang" value="Html">Html
+        <input type="checkbox" name="clang" value="Sql">Sql
+        <input type="checkbox" name="clang" value="Oracle">Oracle
+        <br>
+        <button type="button" id="btn3">가능언어출력</button>
+        <br>
+        <span></span>
+    </div>
+
+    <script>
+        $("#btn3").click(function(){
+             //체크된 언어의 개수를 출력
+             var len = $("input[name ='clang']:checked").length;
+
+             var s = "체크갯수: " + len;
+
+             if(len==0){
+                s+="<b>가능한 언어 없음";
+             }else{
+                s+="<br>";
+                $("input[name='clang']:checked").each(function(i,element){
+                    s+=$(this).val()+"&nbsp;";
+                });
+             }
+
+             $("span:eq(2)").html(s);
+        });
+    </script>
+
+    <h3>폼태그 연습 #5</h3>
+
+    <div>
+        <select id="selone">
+            <option value="red">빨강</option>
+            <option value="blue">파랑</option>
+            <option value="gray">회색</option>
+            <option value="pink">핑크</option>
+        </select>
+        <br>
+        <button type="button" id="btn4">색상가져오기</button>
+        <br>
+        <span></span>
+    </div>
+
+    <script>
+        $("#btn4").click(function(){
+            var text = $("#selone option:selected").text();
+           // var text = $("#selone option:checked").text();
+
+           var val = $("selone").val();
+
+          //var s ="선택 text: " +text;
+           //s+=",선택val: " + val;
+
+           s = "<b style='color:"+val+"'>" + text + "</b>";
+           $("span:eq(3)").html(s);
+        });
+    </script>
+</body>
+</html>

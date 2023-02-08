@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+<style>
+    .hello{
+        border-radius: 30px;
+        box-shadow: 10px 10px 10px gray;
+    }
+</style>
+
+</head>
+<body>
+    <img src="">
+    <img src="">
+    <img src="">
+    <img src="">
+    <img src="">
+
+    <script>
+        $("img").attr("src","../만화이미지/11.png").css({
+            "width" : "300",
+            "height" : "300",
+            "border":"1px dotted pink"
+        });
+
+        //5개의 또다른 이미지를 배열에 넣는다
+        var imgArr = new Array(5);
+        imgArr[0] = "../만화이미지/11.png";
+        imgArr[1] = "../만화이미지/12.png";
+        imgArr[2] = "../만화이미지/13.png";
+        imgArr[3] = "../만화이미지/14.png";
+        imgArr[4] = "../만화이미지/15.png";
+
+        //마우스를 올리면 5개의 이미지중 한개를 random
+        $("img").mouseover(function(){
+            //현재이미지 얻어놓기
+            var currentImg = $(this).attr("src");
+
+            var idx = parseInt(Math.random()*5);
+            $(this).attr("src",imgArr[idx]);
+        });
+        //마우스 벗어나면 다시 원래의 이미지로 복구
+        $("img").mouseout(function(){
+            $(this).attr("src",currentImg);
+        })
+    </script>
+</body>
+</html>
