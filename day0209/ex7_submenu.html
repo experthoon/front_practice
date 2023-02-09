@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        .red{color: red;}
+        .blue{color: blue;}
+        .green{color: green;}
+
+        div.content>b{
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30pt;
+        }
+        div.answer>h5{
+            text-indent: 30px;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            //댓글숨기기
+            $("div.answer").hide();
+
+            $("div.content>b").click(function(){
+                $(this).next().show('slow'); //next = siblings
+                //클릭한곳의 부모 div.content 의 형제들 siblings 그형제들에서 answer를 찾아서 숨김
+                $(this).parent().siblings().find('div.answer').hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="content red">
+        <b>내용1</b>
+        <div class="answer">
+            <h5>내용1에 대한 댓글</h5>
+            <h5>내용1에 대한 댓글</h5>
+            <h5>내용1에 대한 댓글</h5>
+        </div>
+    </div>
+
+    <div class="content blue">
+        <b>내용2</b>
+        <div class="answer">
+            <h5>내용2에 대한 댓글</h5>
+            <h5>내용2에 대한 댓글</h5>
+            <h5>내용2에 대한 댓글</h5>
+        </div>
+    </div>
+
+    <div class="content green">
+        <b>내용3</b>
+        <div class="answer">
+            <h5>내용3에 대한 댓글</h5>
+            <h5>내용3에 대한 댓글</h5>
+            <h5>내용3에 대한 댓글</h5>
+        </div>
+    </div>
+</body>
+</html>

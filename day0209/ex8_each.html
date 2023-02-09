@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <Style>
+        img{
+            border: 5px solid orange;
+            border-radius: 50px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .im{margin-left: 50px}
+        .large{
+            width: 400px;
+            height: 500px;
+            position: absolute;
+            left: 400px;
+            top: 250px;
+            border: 10px inset gray;
+        }
+    </Style>
+    <script>
+        $(function(){
+            //작은이미지에 마우스 올리면 45도 로테이트, 벗어나면 다시 제자리
+
+            //작은 이미지 클릭하면 해당 이미지가 large에 나온다
+
+          
+        
+            $("img").click(function(){
+                $(this).attr("")
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="show"></div>
+    <img src="" class="large" id="large">
+
+    <script>
+        var imginfo=[{name:"../연예인사진/11.jpg",width:"100px"},
+                    {name:"../연예인사진/12.jpg",width:"100px"},
+                    {name:"../연예인사진/13.jpg",width:"100px"},
+                    {name:"../연예인사진/14.jpg",width:"100px"},
+                    {name:"../연예인사진/15.jpg",width:"100px"}];
+
+        var s = " ";
+        //출력할때 class명 im
+        $.each(imginfo, function(i,elt){
+            s+="<img class = 'im' src = '" + elt.name + "' width = '" + elt.width + "'>";
+        });
+        $("#show").html(s);
+    </script>
+</body>
+</html>

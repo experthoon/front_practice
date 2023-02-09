@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        div.right{
+            position: absolute;
+            left: 300px;
+            border: 10px solid gray;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="right">
+        <img src="../html_img/1.png" style="max-width: 200px;">
+    </div>
+    <div class="left">
+        <b>이미지선택</b>
+        <select id="selImage">
+            <option value="../만화이미지/03.png">이미지1</option>
+            <option value="../만화이미지/04.png">이미지2</option>
+            <option value="../만화이미지/05.png">이미지3</option>
+            <option value="../만화이미지/06.png">이미지4</option>
+            <option value="../만화이미지/07.png">이미지5</option>
+        </select>
+        <br><br>
+        <h4>테두리선</h4>
+        <input type="radio" name="line" value="dotted">점선
+        <input type="radio" name="line" value="solid">실선
+        <input type="radio" name="line" value="dashed">파선
+        <input type="radio" name="line" value="inset">입체
+        <input type="radio" name="line" value="groove">입체선
+        <br><br>
+        <b>그림자: </b>
+        <input type="checkbox" id="shadow">그림자 넣기
+    </div>
+
+    <script>
+        $("#selImage").change(function(){
+           var im = $(this).val();
+           $("div.right img").attr("src",im); 
+        });
+
+        $("input[name='line']").click(function(){
+            $("div.right").css("border-style", $(this).val());
+        });
+
+        $("#shadow").click(function(){
+            if($(this).is(":checked")){
+                $("div.right").css("box-shadow","10px 10px 10px gray");
+            }else{
+                $("div.right").css("box-shadow","");
+            }
+        });
+    </script>
+</body>
+</html>
