@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2 style="color: blueviolet;">Start1</h2>
+    <h2 style="color: aqua;">Start2</h2>
+    <h2 style="color: palevioletred;">Start3</h2>
+
+    <script>
+        $("h2").click(function(){
+            //별추가#1
+            $(this).append("★");
+            $(this).append("☆");
+            $(this).append("○");
+
+
+            //별추가#2
+            $(this).html(function(idx,html){
+                return html + "★";
+            });
+        });
+
+        //1초 단위로 마지막 h2를 클릭한 효과주기
+        setInterval(function(){
+            $("h2:last").trigger("click"); //이벤트를 강제로 발생시키는 효과
+        });
+    </script>
+
+    <hr>
+    <input type="file" id="file" style="visibility: hidden;">
+    <img src="../jquery_img (1)/camera.png" width="70" id="camera">
+
+    <script>
+        $("#camera").click(function(){
+            $("#file").trigger("click");
+        });
+    </script>
+</body>
+</html>

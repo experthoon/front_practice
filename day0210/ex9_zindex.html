@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        div.wall{
+            position: absolute;
+            width: 300px;
+            height: 500px;
+            background-image: url('../jquery_img/bg2.png');
+            z-index: 2;
+        }
+        #img1{
+            position: absolute;
+            left: 250px;
+            top: 100px;
+            width: 150px;
+            height: 200px;
+            z-index: 1;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            $("#img1").click(function(){
+
+                //3번째 함수는 너비가 0이되면 호출되는 함수이다
+                $(this).animate({width:'0px'},'slow', function(){
+                    $(this).animate({width:'150px'},'slow');
+                });
+            });
+
+            //3초마다 한번씩 이미지를 클릭 효과
+            setInterval(function(){
+                $("#img1").trigger("click");
+            },3000);
+        });
+    </script>
+</head>
+<body>
+    <div class="wall"></div>
+    <img src="../jquery_img/03.png" id="img1">
+</body>
+</html>

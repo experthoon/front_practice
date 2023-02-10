@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <title>Document</title>
+    <style>
+        li{list-style: none;}
+        body{
+            background-color: wheat;
+        }
+        div.wall{
+            width: 800px;
+            height: 600px;
+            background-color: #999;
+            border: 5px solid #333;
+            border-radius: 5px;
+            margin: auto 50px;
+            overflow: inherit;
+            position: relative;
+        }
+        h1.title{
+            font-size: 27px;
+            position: absolute;
+            right: 20px;
+            top: 70px;
+            width: 150px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        div.wall ul.list{
+            background-color: rgba(0, 0, 0, 9);
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            bottom: 0; left: 0;
+        }
+        div.wall ul.list li{
+            float: left;
+            margin-left: 10px;
+            margin-top: 10px;
+            width: 70px;
+            height: 70px;
+            border: 5px solid #333;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        div.wall ul.list li img{
+            width: 100%;
+        }
+
+        /*제이쿼리에서 사용할 클래스*/
+        div.wall ul.list li.active{
+            border-color: cadetblue;
+        }
+
+    </style>
+
+    <script>
+        $(function(){
+            //벽지샘플이미지 클릭했을때
+            $(".list li>img").click(function(){
+                //현재클릭한 이미지의 부모인 li에 active 클래스 추가
+                $(this).parent().addClass("active");
+
+                //부모태그의 형제태그에 들어있는 active제거
+                $(this).parent().siblings().removeClass("active");
+
+                //클릭한 이미지에서 title 속성값 얻는다
+                var title = $(this).attr("title");
+                //위에서 얻은 title을 h1.title에 넣는다
+                $("h1.title").html(title);
+
+                //배경
+                //클릭한 이미지의 src를 얻는다
+                var imgSrc=$(this).attr("src");
+                //imgSrc를 div.wall에 배경이미지로 넣는다
+                var url = "url('"+imgSrc+"')";
+                $("div.wall").css("background-image",url);
+
+                //한줄로
+                //$("div.wall").css("background-image","url('"+imgSrc+"')");
+            });
+
+           
+        });
+    </script>
+</head>
+<body>
+    <div class="wall">
+        <h1 class="title">Select Page</h1>
+        <img src="../jquery_img (1)/cover2.png">
+        <ul class="list">
+            <li><img src="../jquery_img (1)/b01.png" title="Pear"></li>
+            <li><img src="../jquery_img (1)/b02.png" title="Checker"></li>
+            <li><img src="../jquery_img (1)/b03.png" title="daetree"></li>
+            <li><img src="../jquery_img (1)/b04.png" title="pen"></li>
+            <li><img src="../jquery_img (1)/b05.png" title="leaf"></li>
+            <li><img src="../jquery_img (1)/b06.png" title="tree"></li>
+
+        </ul>
+    </div>
+</body>
+</html>
