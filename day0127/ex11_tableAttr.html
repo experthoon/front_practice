@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tb1{
+            width: 400px;
+            border: 3px solid gray;
+            border-collapse: collapse;
+        }
+        .tb1 td,th{
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" style="width: 300px;">
+        <caption><b>[표1]</b></caption>
+        <tr height = "50"> <!--1줄 1행-->
+            <td align="center">One</td>
+            <td align="right">Two</td>
+            <td align="left" valign="top">Three</td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">3칸합침</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <table class="tb1">
+        <caption><b>[표2]</b></caption>
+        <tr>
+            <th>사진</th>
+            <th>이름</th>
+            <th>주소</th>
+            <th>핸드폰번호</th>
+        </tr>
+        <tr>
+            <td rowspan="3">
+                <img src="../logoImg/a01.png" width="80">
+            </td>
+            <td>유진</td> <td>서울시 강남구</td> <td>010-2222-2222</td>
+        </tr>
+        <tr>
+            <td>유진</td> <td>서울시 마포구</td> <td>010-2222-2222</td>
+        </tr>
+        <tr>
+            <td>유진</td> <td>서울시 성동구</td> <td>010-2222-2222</td>
+        </tr>
+    </table>
+</body>
+</html>

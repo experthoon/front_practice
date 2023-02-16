@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*모든 태그 사용*/
+        .mbc{
+            color: magenta;
+        }
+        /*클래스가 sbs인 div에서 사용*/
+        div.sbs{
+            color: green;
+            font-size:  20pt;
+            height: 50px;
+            border: 1px solid tomato;
+            line-height: 50px;
+        }
+        /*아이디는 #으로 만드는데 딱 하나*/
+        #jtbc{
+            position: absolute;
+            top: 400px;
+            left: 200px;
+            width:  300px;
+            height: 100px;
+            font-size: 18px;
+            padding-top: 30px;
+            border: 3px dotted cyan;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div style="color: red; font-size: 15pt; background-color: yellow;
+    width: 200px; height: 150px;">
+    안녕하세요
+    </div>
+    <div style="position: absolute; top: 200px; left: 300px;
+    width: 200px; height:  100px; border: 2px dotted green;"> <!--top left 기본-->
+        오늘은 눈이 엄청온다
+    </div>
+    <div class = "mbc">HELLO</div>
+    <div class = "sbs">happyday</div>
+    <div class = "sbs">오늘은 html 공부중입니다</div>
+
+    <font class="mbc">Hava a nice Day</font>
+    <b class = "mbc">Bold Test</b>
+    <b class = "sbs">굵은글꼴</b>
+    <div id="jtbc">여기는 쌍용교육센터 입니다</div>
+</body>
+</html>

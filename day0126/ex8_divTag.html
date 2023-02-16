@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--css영역 .은 클래스 #은 id-->
+    <style>
+        .happy{ /*전체 태그에 적용*/
+            color: #ffccff;
+            font-size: 30px;
+            font-family: 'Comic Sans MS';
+        }
+
+        b.nice{ /*b태그에만 적용*/
+            text-decoration: underline;
+            color: blue;
+            text-shadow: 5px 5px 5px #ccc;
+        }
+
+        img.imga{
+            width: 150px;
+            border: 10px groove gray;
+            margin-left: 200px; /*태그밖 왼쪽 여백*/
+            margin-bottom: 20px;
+        }
+        img.imgb{
+                width: 200px;
+                height: 200px;
+                box-shadow: 5px 5px 5px gray; /*박스 그림자를 의미한다*/
+                border-radius: 30px;
+        }
+        img.photo{
+            width: 200px;
+            height: 200px;
+            border: ipx solid gray;
+            border-radius: 100px;
+        }
+        b.iron{
+            font-size: 30px;
+            font-family: '궁서';
+            color: cadetblue;
+            margin-left: 40px ;
+        }
+    </style>
+
+
+</head>
+<body>
+    <font size="5" color="red">Font Tag!!!</font><br>
+    <font size="2" color="red">Font Tag!!!</font><br>
+    <span style="color: aqua; font-size: 2em;">SpanTag!!!</span>
+    <span style="border: 3px solid green;">Span안녕하세요</span>
+    <div class="happy">DivTag_#1</div>
+    <div class="happy">DivTag_#2</div>
+    <b class = "happy nice">B Tag!!! 굵게 속성 태그</b>
+    <br>
+    <img src="../logoImg/blackwidow.png" title="나는 블랙위도우" alt="블랙위도우 없다" class="imga"><br>
+    <img src="../logoImg/captain.png" alt="캡틴없음" title="나는 캡틴" class ="imgb"><br>
+    <img src="../logoImg/ironman.png" class = "photo"><br>
+    <b class = "iron">아이언맨</b>
+</body>
+</html>

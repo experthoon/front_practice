@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: #222;
+    height: 100%;
+    margin: 0;
+}
+
+#container{
+    position: absolute;
+    left: 50%;
+    width: 900px;
+    height: 100%;
+    background: #fff;
+    margin-left: -450px;
+}
+
+aside{
+    float: left;
+    width: 300px;
+    padding: 20px 50px;
+    height: 100%;
+    background: rgb(216, 216, 216);
+}
+
+aside>div>img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    border: 1px solid gray;
+}
+
+#main{
+    float: right;
+    width: 600px;
+    height: 100%;
+    padding: 20px;
+}
+
+.subtitle{
+    font-size: 1.2em;
+
+    line-height: 2em;
+}

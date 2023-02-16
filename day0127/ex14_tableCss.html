@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*tb1*/
+        .tb1{
+            width: 500px;
+            border: 5px groove gray;
+        }
+        .tb1>thead>tr>th{
+            border: 1px solid gray;
+            background-color: aquamarine;
+            color: blue;
+        }
+        .tb1>thead>tr{
+            height: 50px;
+            font-size: 1.2em;
+        }
+        .tb1>tbody>tr{
+            height: 30px;
+            text-align: center;
+        }
+        .tb1>tbody>tr>td{
+            background-color: black;
+            color: white;
+            border: 1px solid yellow;
+        }
+        /*tb2*/
+        .tb2{
+            width: 400px;
+            border: 3px inset green;
+            border-collapse: collapse;
+        }
+        .tb2 th,.tb2 td{
+            border:1px solid orange;
+        }
+        .tb2 thead tr{height: 50px; color: brown;}
+
+        .tb2 img{width: 100px;}
+        /*td태그의 1번열의 너비조절*/
+        .tb2 td:nth-child(1){width: 70px;}
+        .tb2 td:nth-child(3){width: 100px; color: blue; text-align: right;}
+
+        /*테이블 이벤트 css주기*/
+        .tb1 tbody td:hover{
+            background-color: white;
+            color:  black;
+        }
+        .tb2 tbody tr:hover{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <table class="tb1">
+        <caption><b>[표연습_1]</b></caption>
+        <thead>
+            <tr>
+                <th>이름</th><th>나이</th><th>주소</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>김예림</td><td>22세</td><td>부산시 해운대구</td>
+            </tr>
+            <tr>
+                <td>강은주</td><td>26세</td><td>대구시 수성구</td>
+            </tr>
+            <tr>
+                <td>가요이</td><td>27세</td><td>수원시 팔달구</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table class="tb2">
+        <caption><b>[표연습_2]</b></caption>
+        <thead>
+            <tr>
+                <th>상품명</th><th>사진</th><th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>향수</td>
+                <td><img src="../logoImg/acc03.png"</td>
+                <td>67,000</td>
+            </tr>
+            <tr>
+                <td>시계</td>
+                <td><img src="../logoImg/acc01.png"</td>
+                <td>10,0000</td>
+            </tr>
+            <tr>
+                <td>가방</td>
+                <td><img src="../logoImg/bag01.png"</td>
+                <td>89,000</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
